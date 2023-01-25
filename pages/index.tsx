@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
-import book from "@/assets/images/book.jpg";
+
 import styles from "@/styles/Home.module.css";
-import { Form } from "react-bootstrap";
-import { FormEvent } from "react";
+
+import { PitchPerfect } from "@/components/PerfectPitch";
+import { CodeRefactor } from "@/components/CodeRefactor";
+
 export default function Home() {
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {}
   return (
     <>
       <Head>
@@ -14,24 +14,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1>Perfect Pitch</h1>
-        <div>Fale sobre voce e a Ai vai lhe criar um roteiro pessoal</div>
 
-        <div className={styles.mainImageContainer}>
-          <Image
-            src={book}
-            fill
-            alt="um livro aberto"
-            priority
-            className={styles.mainImage}
-          />
-        </div>
-        <Form onSubmit={handleSubmit} className={styles.inputForm}>
-          <Form.Group className="mb-3" controlId="prompt-input">
-            <Form.Label>Fale um pouco sobre voce</Form.Label>
-          </Form.Group>
-        </Form>
+      <main className={styles.main}>
+        <PitchPerfect />
+        <CodeRefactor />
       </main>
     </>
   );
