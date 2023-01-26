@@ -42,10 +42,17 @@ export const CodeRefactor = () => {
       </div>
       {codeLoading && <Spinner animation="border" />}
       {codeError && "Algo deu errado, porfavor tente novamente!"}
-      {code && <h5 className={styles.mensagem}>{code}</h5>}
+      {code && (
+        <div>
+          <h5 className={styles.mensagem}>Código refatorado:</h5>
+          <pre>
+            <code>{code}</code>
+          </pre>
+        </div>
+      )}
       <Form onSubmit={handleSubmit} className={styles.inputForm}>
         <Form.Group className="mb-3" controlId="prompt-input">
-          <Form.Label>Insira seu codigo</Form.Label>
+          <Form.Label>Insira seus afazeres e sua janela de tempo</Form.Label>
           <Form.Control
             as="textarea"
             rows={5}
@@ -55,7 +62,7 @@ export const CodeRefactor = () => {
           />
         </Form.Group>
         <Button type="submit" disabled={codeLoading}>
-          Crie meu roteiro pessoal
+          Crie minha rotina
         </Button>
       </Form>
     </>

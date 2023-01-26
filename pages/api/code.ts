@@ -1,3 +1,4 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Configuration, OpenAIApi } from "openai";
 
@@ -14,23 +15,19 @@ export default async function handler(
   if (!prompt) {
     return res.status(400).json({ error: "Prompt Invalida" });
   }
-  if (prompt.length > 8000) {
+  if (prompt.length > 1000) {
     return res.status(400).json({ error: "Prompt Muito Longa" });
   }
-  const promptString = `Create Documentation to this code \n Data: ${JSON.stringify(
-    prompt
-  )} \n your documentation:`;
-
   const completion = await openai.createCompletion({
-    model: "code-davinci-002",
-    prompt: promptString,
-    max_tokens: 8000,
+    model: "text-davinci-003",
+    prompt: `organize a week routine in Brazzilian portuguese with the activities received in the following data. \n Data: ${prompt}\n Perfect Routine for you:`,
+    max_tokens: 1000,
     temperature: 1,
     presence_penalty: 0,
     frequency_penalty: 0,
   });
 
-  const codeDoc = completion.data.choices[0].text;
+  const code = completion.data.choices[0].text;
 
-  res.status(200).json({ codeDoc });
+  res.status(200).json({ code });
 }
