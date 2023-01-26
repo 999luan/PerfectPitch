@@ -17,16 +17,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <aside className={styles.aside}>
-        <nav>
-          <button onClick={() => setActiveComponent("pitchPerfect")}>
-            Criar meu resumo
-          </button>
-          <button onClick={() => setActiveComponent("codeRefactor")}>
-            Organizar meus horários
-          </button>
-        </nav>
-      </aside>
+
+      <nav>
+        <h3>Dev Companion</h3>
+        <br></br>
+        <br></br>
+
+        <button onClick={() => setActiveComponent("pitchPerfect")}>
+          Criar meu resumo
+        </button>
+        <button onClick={() => setActiveComponent("codeRefactor")}>
+          Organizar meus horários
+        </button>
+      </nav>
+
       <main className={styles.main}>
         {activeComponent === "pitchPerfect" && <PitchPerfect />}
         {activeComponent === "codeRefactor" && <CodeRefactor />}
