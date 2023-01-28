@@ -1,4 +1,6 @@
 import { Form, Button, Spinner } from "react-bootstrap";
+import "@picocss/pico";
+
 import { FormEvent, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import book from "@/assets/images/book.jpg";
@@ -44,7 +46,7 @@ export const CodeRefactor = () => {
       {codeError && "Algo deu errado, porfavor tente novamente!"}
       {code && (
         <div>
-          <h5 className={styles.mensagem}>Código refatorado:</h5>
+          <h5 className={styles.mensagem}>Sua rotina:</h5>
           <pre>
             <code>{code}</code>
           </pre>
