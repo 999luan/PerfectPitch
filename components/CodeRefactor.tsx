@@ -28,7 +28,7 @@ export const CodeRefactor = () => {
         setCode(body.code);
       } catch (error) {
         console.error(error);
-        setPitchError(true);
+        setCodeError(true);
       } finally {
         setCodeLoading(false);
       }
