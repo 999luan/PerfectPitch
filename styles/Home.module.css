@@ -2,28 +2,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 600px;
-  margin: auto;
-  padding: 4rem 1rem;
-  text-align: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.mainImageContainer {
-  position: relative;
-  margin: 2rem 0;
-  width: 100%;
-  aspect-ratio: 12/7;
-}
-
-.mainImage {
-  object-fit: cover;
-  border-radius: 40px;
-  box-shadow: 0 3px 8px rgb(0 0 0 / 24%);
+.mainContainer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  color: #000;
 }
 
 .inputForm {
-  width: 100%;
+  width: 80%;
+  margin-top: 2rem;
 }
+
 .mensagem {
   text-align: left;
+  margin-top: 2rem;
 }

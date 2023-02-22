@@ -33,15 +33,47 @@ export const PitchPerfect = () => {
   }
   return (
     <>
-      <div className={styles.mainImageContainer}>
-        <Image src={book} alt="um livro aberto" className={styles.mainImage} />
+      <div className={styles.mainContainer}>
+        <h1>Bem-vindo ao criador de Roteiros Pessoais!</h1>
+        <p>
+          Para obter um roteiro personalizado, por favor, siga as instruções
+          abaixo:
+        </p>
+        <ol>
+          <li>
+            Insira o objetivo do roteiro (por exemplo, planejamento de estudos,
+            organização de tarefas, desenvolvimento pessoal, etc.);
+          </li>
+          <li>
+            Insira o prazo que você tem disponível para concluir o roteiro;
+          </li>
+          <li>
+            Insira as principais etapas que você precisa realizar para alcançar
+            seu objetivo;
+          </li>
+          <li>
+            Insira suas preferências de abordagem (por exemplo, técnica de
+            pomodoro, organização por prioridades, uso de aplicativos, etc.);
+          </li>
+          <li>
+            Se desejar, você pode inserir outras informações relevantes para a
+            criação do roteiro, como seu perfil profissional, áreas de
+            interesse, recursos disponíveis, etc.
+          </li>
+        </ol>
+
+        <p>
+          Com base nas informações fornecidas, o chatbot criará um roteiro
+          personalizado para te ajudar a alcançar seus objetivos pessoais. Caso
+          precise de ajuda ou tenha alguma dúvida, basta digitar "ajuda" no
+          campo de mensagem.
+        </p>
       </div>
       {pitchLoading && <Spinner animation="border" />}
       {pitchError && "Algo deu errado, porfavor tente novamente!"}
       {pitch && <h5 className={styles.mensagem}>{pitch}</h5>}
       <Form onSubmit={handleSubmit} className={styles.inputForm}>
         <Form.Group className="mb-3" controlId="prompt-input">
-          <Form.Label>Fale um pouco sobre voce</Form.Label>
           <Form.Control
             as="textarea"
             rows={5}

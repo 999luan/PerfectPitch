@@ -39,8 +39,40 @@ export const CodeRefactor = () => {
   }
   return (
     <>
-      <div className={styles.mainImageContainer}>
-        <Image src={book} alt="um livro aberto" className={styles.mainImage} />
+      <div className={styles.mainContainer}>
+        <h1>Bem-vindo ao Organizador de Rotina!</h1>
+        <p>
+          Para organizar sua rotina com base nos dados fornecidos, por favor,
+          siga as instruções abaixo:
+        </p>
+        <ol>
+          <li>Insira o seu horário de acordar e dormir;</li>
+          <li>
+            Insira as atividades que você precisa realizar diariamente, como
+            trabalho, estudos, exercícios, refeições, etc.;
+          </li>
+          <li>
+            Insira o tempo que você precisa dedicar a cada uma das atividades
+            diárias;
+          </li>
+          <li>
+            Insira suas preferências de horários para cada atividade (por
+            exemplo, preferência por realizar exercícios pela manhã, estudos à
+            tarde, etc.);
+          </li>
+          <li>
+            Se desejar, você pode inserir outras informações relevantes para a
+            organização da sua rotina, como sua localização, a duração do seu
+            trajeto até o trabalho ou escola, entre outros.
+          </li>
+        </ol>
+
+        <p>
+          Com base nas informações fornecidas, o chatbot criará uma rotina
+          personalizada para te ajudar a manter uma organização mais eficiente e
+          produtiva. Caso precise de ajuda ou tenha alguma dúvida, basta digitar
+          "ajuda" no campo de mensagem.
+        </p>
       </div>
       {codeLoading && <Spinner animation="border" />}
       {codeError && "Algo deu errado, porfavor tente novamente!"}
@@ -54,12 +86,11 @@ export const CodeRefactor = () => {
       )}
       <Form onSubmit={handleSubmit} className={styles.inputForm}>
         <Form.Group className="mb-3" controlId="prompt-input">
-          <Form.Label>Insira seus afazeres e sua janela de tempo</Form.Label>
           <Form.Control
             as="textarea"
             rows={5}
             name="prompt"
-            placeholder="ex: meu codigo"
+            placeholder="ex: café da manha, 2 horas de trabalho, 2 horas de estudo"
             maxLength={8000}
           />
         </Form.Group>

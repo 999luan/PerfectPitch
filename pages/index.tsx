@@ -21,13 +21,14 @@ export default function Home() {
 
       <nav className={styles.nav}>
         <h3>Dev Companion</h3>
-
-        <button onClick={() => setActiveComponent("pitchPerfect")}>
-          Criar meu resumo
-        </button>
-        <button onClick={() => setActiveComponent("codeRefactor")}>
-          Organizar meus horários
-        </button>
+        <div>
+          <button onClick={() => setActiveComponent("pitchPerfect")}>
+            Criar meu resumo
+          </button>
+          <button onClick={() => setActiveComponent("codeRefactor")}>
+            Organizar meus horários
+          </button>
+        </div>
       </nav>
 
       <main className={styles.main}>
