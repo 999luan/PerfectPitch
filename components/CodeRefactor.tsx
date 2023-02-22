@@ -21,18 +21,13 @@ export const CodeRefactor = () => {
         setCode("");
         setCodeError(false);
         setCodeLoading(true);
-        const response = await fetch(
-          "/api/code?prompt=" + encodeURIComponent(prompt)
-        );
+        const response = await fetch("/api/code");
         const body = await response.json();
-        if (!response.ok) {
-          throw new Error(body.error);
-        }
         setCode(body.code);
       } catch (error) {
         console.error(error);
         setCodeError(true);
-        setCode(error.message);
+        setCode((error as Error).message);
       } finally {
         setCodeLoading(false);
       }
@@ -72,7 +67,7 @@ export const CodeRefactor = () => {
           Com base nas informações fornecidas, o chatbot criará uma rotina
           personalizada para te ajudar a manter uma organização mais eficiente e
           produtiva. Caso precise de ajuda ou tenha alguma dúvida, basta digitar
-          "ajuda" no campo de mensagem.
+          &quot;ajuda&quot; no campo de mensagem.
         </p>
       </div>
       {codeLoading && <Spinner animation="border" />}
