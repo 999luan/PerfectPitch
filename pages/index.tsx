@@ -1,5 +1,4 @@
 import Head from "next/head";
-import "@picocss/pico";
 
 import styles from "@/styles/Home.module.css";
 
@@ -18,19 +17,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <nav className={styles.nav}>
-        <h3>Dev Companion</h3>
-        <div>
-          <button onClick={() => setActiveComponent("pitchPerfect")}>
-            Criar meu resumo
-          </button>
-          <button onClick={() => setActiveComponent("codeRefactor")}>
-            Organizar meus horários
-          </button>
-        </div>
-      </nav>
-
+      <header>
+        <nav className={styles.nav}>
+          <h3>Dev Companion</h3>
+          <div>
+            <button onClick={() => setActiveComponent("pitchPerfect")}>
+              Criar meu resumo
+            </button>
+            <button onClick={() => setActiveComponent("codeRefactor")}>
+              Organizar meus horários
+            </button>
+          </div>
+        </nav>
+      </header>
       <main className={styles.main}>
         {activeComponent === "pitchPerfect" && <PitchPerfect />}
         {activeComponent === "codeRefactor" && <CodeRefactor />}
