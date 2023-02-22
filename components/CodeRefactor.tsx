@@ -14,7 +14,8 @@ export const CodeRefactor = () => {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const prompt = formData.get("prompt").toString().trim();
+    const promptValue = formData.get("prompt");
+    const prompt = promptValue ? promptValue.toString().trim() : "";
     if (prompt) {
       try {
         setCode("");
