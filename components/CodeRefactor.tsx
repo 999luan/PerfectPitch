@@ -76,9 +76,8 @@ export const CodeRefactor = () => {
       {code && (
         <div>
           <h5 className={styles.mensagem}>Sua rotina:</h5>
-          <pre>
-            <code>{code}</code>
-          </pre>
+
+          {code}
         </div>
       )}
       <Form onSubmit={handleSubmit} className={styles.inputForm}>
