@@ -65,9 +65,7 @@ export const PitchPerfect = () => {
 
         <p>
           Com base nas informações fornecidas, o chatbot criará um roteiro
-          personalizado para te ajudar a alcançar seus objetivos pessoais. Caso
-          precise de ajuda ou tenha alguma dúvida, basta digitar
-          &quot;ajuda&quot; no campo de mensagem.
+          personalizado para te ajudar a alcançar seus objetivos pessoais.
         </p>
       </div>
       {pitchLoading && <Spinner animation="border" />}
