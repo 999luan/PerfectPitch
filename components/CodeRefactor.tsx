@@ -21,11 +21,9 @@ export const CodeRefactor = () => {
         setCode("");
         setCodeError(false);
         setCodeLoading(true);
-        const response = await fetch("/api/code", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt }),
-        });
+        const response = await fetch(
+          "/api/code?prompt=" + encodeURIComponent(prompt)
+        );
         const body = await response.json();
         setCode(body.code);
       } catch (error) {
